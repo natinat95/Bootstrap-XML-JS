@@ -1,0 +1,205 @@
+/* Estilos Generales */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4; /* Gris claro */
+    margin: 0;
+    padding: 0;
+    color: #000000; /* Gris oscuro */
+}
+
+/* Estilo del Navbar */
+.navbar {
+    margin-bottom: 30px;
+    background-color: #800000; /* Granate */
+}
+
+.navbar-brand {
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+.navbar-brand:hover {
+    color: #d4b0b0; /* Gris suave al pasar el mouse */
+}
+
+/* Contenedor Principal */
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 15px;
+}
+
+/* Título */
+h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #333; /* Gris oscuro */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Estilo de los Botones */
+.btn {
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Botón principal */
+.btn-primary {
+    background-color: #9e1b32; /* Granate */
+    border-color: #9e1b32;
+    color: white;
+}
+/* Estado activo (clic) */
+.btn:active {
+    transform: none; /* Elimina cualquier movimiento */
+}
+
+
+.btn-primary:hover {
+    background-color: #7b162f; /* Granate más oscuro */
+    border-color: #7b162f;
+    transform: translateY(-2px);
+}
+
+/* Botón info */
+.btn-info {
+    background-color: #607d8b; /* Gris azulado */
+    border-color: #607d8b;
+    color: white;
+}
+
+.btn-info:hover {
+    background-color: #455a64; /* Gris azulado oscuro */
+    border-color: #455a64;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    margin-top: 15px;
+    background-color: #b0bec5; /* Gris suave */
+    border-color: #b0bec5;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: #90a4ae; /* Gris más oscuro */
+    border-color: #90a4ae;
+    transform: translateY(-2px);
+}
+
+/* Alineación de los tres primeros botones */
+.button-group {
+    display: flex;
+    gap: 15px; /* Espacio entre los botones */
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Estilo de las Tarjetas */
+.card {
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    background-color: #fff; /* Blanco */
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.card:hover {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+}
+
+.card-img-top {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px 12px 0 0;
+}
+
+/* Cuerpo de la tarjeta */
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    height: 100%;
+}
+
+/* Título de la tarjeta */
+.card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #333; /* Gris oscuro */
+}
+
+/* Texto de la tarjeta */
+.card-text {
+    font-size: 1rem;
+    color: #777; /* Gris suave */
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+/* Asegurarse de que los botones se vean bien dentro de la tarjeta */
+.card-footer {
+    text-align: center;
+}
+
+.btn {
+    width: 100%;
+}
+
+/* Asegurar que las columnas se distribuyan de manera apropiada */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.col-md-4 {
+    flex: 1 1 30%;
+    max-width: 30%;
+}
+
+/* Paginación */
+.pagination {
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.page-item.active .page-link {
+    background-color: #9e1b32; /* Granate */
+    border-color: #9e1b32;
+    color: white;
+}
+
+.page-link {
+    border-radius: 10px;
+    padding: 10px 15px;
+}
+
+/* Estilos de la barra de búsqueda */
+#searchInput {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+    padding: 12px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+#searchInput:focus {
+    border-color: #9e1b32; /* Granate */
+    outline: none;
+}
