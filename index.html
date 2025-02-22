@@ -27,10 +27,24 @@
     <!-- Contenedor Principal -->
     <div class="container mt-4">
         <h1 class="text-center">Explorador de Feeds RSS</h1>
+        
+        <!-- Selector de Feeds RSS -->
         <div class="mb-3">
-            <label for="rssUrl" class="form-label">Ingresa la URL del Feed RSS:</label>
-            <input type="text" class="form-control" id="rssUrl" placeholder="https://example.com/rss">
+            <label for="rssSelect" class="form-label">Elige un Feed RSS:</label>
+            <select class="form-select" id="rssSelect" onchange="toggleCustomUrlInput()">
+                <option value="http://rss.cnn.com/rss/cnn_topstories.rss">CNN</option>
+                <option value="https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml">Ney York Times</option>
+                <option value="https://www.elmundo.es/rss/portada.xml">El Mundo</option>
+                <option value="custom">Ingresar URL</option>
+            </select>
         </div>
+
+        <!-- Campo para ingresar URL manualmente (oculto por defecto) -->
+        <div class="mb-3" id="customUrlContainer" style="display: none;">
+            <label for="customRssUrl" class="form-label">Ingresa la URL del Feed RSS:</label>
+            <input type="text" class="form-control" id="customRssUrl" placeholder="https://example.com/rss">
+        </div>
+
         <button class="btn btn-primary mb-3" onclick="loadRSS()">Cargar Noticias</button>
 
         <!-- Botones de Filtro -->
