@@ -1,16 +1,36 @@
 // https://dev.to/feed
 // https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml
 // https://www.elmundo.es/rss/portada.xml
+// https://elpais.com/rss/feed.html?feed=elpais<|meta_end|>
 let allNews = []; // Array para almacenar todas las noticias
 let favorites = []; // Array para noticias favoritas
 let currentPage = 1; // Página actual
 const itemsPerPage = 10; // Noticias por página
 
+
+function toggleCustomUrlInput() {
+    const rssSelect = document.getElementById('rssSelect');
+    const customUrlContainer = document.getElementById('customUrlContainer');
+
+    if (rssSelect.value === 'custom') {
+        // Mostrar el campo para ingresar la URL
+        customUrlContainer.style.display = 'block';
+    } else {
+        // Ocultar el campo para ingresar la URL
+        customUrlContainer.style.display = 'none';
+    }
+}
 // Función para cargar el feed RSS
 function loadRSS() {
-    const rssUrl = $('#rssUrl').val().trim(); // Obtener y limpiar la URL del feed
+    let rssUrl = document.getElementById('rssSelect').value;
+
+    // Si se seleccionó 'custom', tomar la URL ingresada por el usuario
+    if (rssUrl === 'custom') {
+        rssUrl = document.getElementById('customRssUrl').value;
+    }
+
     if (!rssUrl) {
-        alert('Por favor, ingresa una URL válida.');
+        alert('Por favor, selecciona o ingresa un Feed RSS válido.');
         return;
     }
 
@@ -29,8 +49,6 @@ function loadRSS() {
         }
     });
 }
-
-
 
 // Función para procesar el feed RSS y extraer datos
 function parseRSS(data) {
@@ -51,7 +69,7 @@ function parseRSS(data) {
 
         // Buscar la imagen en distintas etiquetas
         let imageUrl = $(this).find('media\\:content, enclosure').attr('url');
-        
+
         // Si no encuentra en media:content o enclosure, intenta en description
         if (!imageUrl) {
             const descHtml = $(this).find('description').text();
@@ -73,8 +91,6 @@ function parseRSS(data) {
     renderNews(); // Mostrar noticias
 }
 
-
-
 // Función para buscar noticias por título
 let searchQuery = '';
 function searchNews() {
@@ -89,7 +105,7 @@ function renderNews() {
     newsContainer.empty();
 
     // Filtrar noticias por búsqueda
-    const filteredNews = allNews.filter(news => 
+    const filteredNews = allNews.filter(news =>
         news.title.toLowerCase().includes(searchQuery)
     );
 
