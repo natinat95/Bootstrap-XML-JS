@@ -1,25 +1,30 @@
 /* Estilos Generales */
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #f4f4f4; /* Gris claro */
+    background-color: #121212; /* Fondo oscuro */
+    color: #e0e0e0; /* Texto claro */
     margin: 0;
     padding: 0;
-    color: #000000; /* Gris oscuro */
+    
 }
 
 /* Estilo del Navbar */
 .navbar {
     margin-bottom: 30px;
-    background-color: #800000; /* Granate */
+    background-color: #1e1e1e; /* Gris oscuro */
+    border-bottom: 2px solid #333; /* Línea sutil en la parte inferior */
+    
 }
 
 .navbar-brand {
-    font-size: 1.2rem;
-    color: #fff;
+    font-size: 1.5rem;
+    color: #ffffff;
+    font-weight: 700;
+    
 }
 
 .navbar-brand:hover {
-    color: #d4b0b0; /* Gris suave al pasar el mouse */
+    color: #f5a623; /* Amarillo cálido */
 }
 
 /* Contenedor Principal */
@@ -27,17 +32,19 @@ body {
     max-width: 1200px;
     margin: auto;
     padding: 0 15px;
+    
 }
 
 /* Título */
 h1 {
     font-size: 2.8rem;
     font-weight: 700;
-    color: #333; /* Gris oscuro */
+    color: #ffffff;
     text-align: center;
     margin-bottom: 20px;
+    letter-spacing: 2px;
+    text-shadow: 0 0 15px rgba(250, 215, 58, 0.7); /* Efecto neón */
 }
-
 /* Estilo de los Botones */
 .btn {
     border-radius: 8px;
@@ -48,20 +55,20 @@ h1 {
 
 /* Botón principal */
 .btn-primary {
-    background-color: #9e1b32; /* Granate */
+    background-color: #9e1b32; /* Granate oscuro */
     border-color: #9e1b32;
     color: white;
 }
-/* Estado activo (clic) */
-.btn:active {
-    transform: none; /* Elimina cualquier movimiento */
-}
-
 
 .btn-primary:hover {
     background-color: #7b162f; /* Granate más oscuro */
     border-color: #7b162f;
     transform: translateY(-2px);
+}
+
+/* Estado activo (clic) */
+.btn:active {
+    transform: none; /* Elimina cualquier movimiento */
 }
 
 /* Botón info */
@@ -77,6 +84,7 @@ h1 {
     transform: translateY(-2px);
 }
 
+/* Botón secundario */
 .btn-secondary {
     margin-top: 15px;
     background-color: #b0bec5; /* Gris suave */
@@ -101,17 +109,18 @@ h1 {
 /* Estilo de las Tarjetas */
 .card {
     border-radius: 12px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     overflow: hidden;
     transition: all 0.3s ease;
-    background-color: #fff; /* Blanco */
+    background-color: #333333; /* Fondo oscuro para las tarjetas */
+    color: #ffffff; /* Texto blanco */
     display: flex;
     flex-direction: column;
     height: 100%;
 }
 
 .card:hover {
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
     transform: translateY(-5px);
 }
 
@@ -133,16 +142,16 @@ h1 {
 
 /* Título de la tarjeta */
 .card-title {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     font-weight: bold;
     margin-bottom: 0.5rem;
-    color: #333; /* Gris oscuro */
+    color: #f5a623; /* Amarillo cálido */
 }
 
 /* Texto de la tarjeta */
 .card-text {
     font-size: 1rem;
-    color: #777; /* Gris suave */
+    color: #bbbbbb; /* Gris claro */
     margin-bottom: 1.5rem;
     flex-grow: 1;
 }
@@ -169,21 +178,65 @@ h1 {
     max-width: 30%;
 }
 
-/* Paginación */
+/* Estilo de la Paginación */
 .pagination {
     justify-content: center;
     margin-top: 40px;
+    display: flex;
+    gap: 10px;
 }
 
-.page-item.active .page-link {
-    background-color: #9e1b32; /* Granate */
-    border-color: #9e1b32;
-    color: white;
+/* Estilo de los íconos de paginación */
+.page-item {
+    list-style: none;
 }
 
 .page-link {
-    border-radius: 10px;
+    display: inline-block;
     padding: 10px 15px;
+    font-size: 1.1rem;
+    color: #e0e0e0; /* Texto claro */
+    background-color: #333333; /* Fondo oscuro */
+    border: 1px solid #444444; /* Borde oscuro */
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-decoration: none;
+}
+
+.page-link:hover {
+    background-color: #f5a623; /* Amarillo cálido al pasar el mouse */
+    color: #1c1c1c; /* Texto oscuro al hacer hover */
+    transform: translateY(-2px); /* Movimiento sutil */
+}
+
+.page-link:focus {
+    outline: none;
+    border-color: #f5a623; /* Resalta el borde con amarillo cálido */
+}
+
+/* Paginación activa */
+.page-item.active .page-link {
+    background-color: #9e1b32; /* Granate oscuro */
+    border-color: #9e1b32;
+    color: white; /* Texto blanco en la página activa */
+}
+
+.page-item.disabled .page-link {
+    color: #666666; /* Color gris para los botones deshabilitados */
+    background-color: #1c1c1c; /* Fondo más oscuro para elementos deshabilitados */
+    border-color: #333333;
+    pointer-events: none;
+}
+
+/* Estilo para el ícono de la página anterior/siguiente */
+.page-item .page-link i {
+    font-size: 1.3rem;
+    padding: 0;
+}
+
+/* Para asegurar que el tamaño de los botones se mantenga consistente */
+.page-item {
+    display: inline-flex;
 }
 
 /* Estilos de la barra de búsqueda */
@@ -194,12 +247,28 @@ h1 {
     padding: 12px;
     margin-left: auto;
     margin-right: auto;
-    border: 1px solid #ccc;
+    border: 1px solid #4a4a4a; /* Gris oscuro */
     font-size: 1rem;
     transition: all 0.3s ease;
+    background-color: #333333; /* Fondo oscuro */
+    color: white;
 }
 
 #searchInput:focus {
-    border-color: #9e1b32; /* Granate */
+    border-color: #f5a623; /* Amarillo cálido */
     outline: none;
+}
+
+/* Agregar sombra en el contenedor principal para separar del fondo */
+.container {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    background-color: #1c1c1c; /* Fondo ligeramente más oscuro para el contenedor */
+    padding: 30px;
+    border-radius: 10px;
+}
+
+
+/* Tiempos de transición suaves */
+* {
+    transition: all 0.3s ease;
 }
